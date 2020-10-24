@@ -25,7 +25,7 @@ class Schedule extends React.Component {
 
     let schedule = this.state.schedule.slice(0);
     schedule.sort((a, b) => a.showtime - b.showtime);
-    schedule = schedule.filter(item => item.showtime + (item.runtime + 30 * 60) > currTimestamp);
+    schedule = schedule.filter(item => item.showtime + ((item.runtime + 30) * 60) > currTimestamp);
     return schedule;
   }
 
