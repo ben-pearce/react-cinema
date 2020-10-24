@@ -36,20 +36,22 @@ class Cinema extends React.Component {
     return (
       <>
         <Navbar bg="dark" variant="dark" sticky="top">
-          <Navbar.Brand>
-            🍿 {CinemaConfig.cinema_name}
-          </Navbar.Brand>
-          <Nav>
-            {navLinks}
-          </Nav>
+          <Container fluid={true} style={{ 'max-width': '1920px' }} className={'pl-2 pr-2'}>
+            <Navbar.Brand>
+              🍿 {CinemaConfig.cinema_name}
+            </Navbar.Brand>
+            <Nav>
+              {navLinks}
+            </Nav>
+          </Container>
         </Navbar>
-        <Container fluid={true} className="pt-3">
+        <Container fluid={true} style={{ 'max-width': '1920px' }} className={'pt-3'}>
           <Row>
             <Col sm={9}>
               <Screen ref={this.screen} schedule={this.schedule} />
               <Schedule ref={this.schedule} screen={this.screen} />
             </Col>
-            <Col sm={3} className="pb-2">
+            <Col className="pb-2">
               <div className="cinema-sidebar-sticky">
                 <WidgetBot 
                   server={CinemaConfig.discord_guild_id} 
