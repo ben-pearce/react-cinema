@@ -3,10 +3,6 @@ $solero:  #73afb6;
 
 $success: $solero;
 
-:root {
-  --plyr-color-main: #73afb6;
-}
-
 .cinema-sidebar-sticky {
   position: sticky;
   top: 0;
@@ -19,5 +15,4 @@ $success: $solero;
 @import "~bootstrap/scss/bootstrap";
 @import "~bootswatch/dist/darkly/bootswatch";
 
-//@import "~plyr/src/sass/plyr";
 @import "~video.js/dist/video-js";
