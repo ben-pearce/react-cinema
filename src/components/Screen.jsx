@@ -70,7 +70,7 @@ class Screen extends React.Component {
     return (
       <div>
         <h1>{ this.state.live ? this.state.title : 'Off-Air' }</h1>
-        { this.state.live === null ? <ScreenContentLoader/> : this.state.live ? this.video : <img src={CinemaOffAir} width="100%"/>}
+        { this.state.live === null ? <ScreenContentLoader/> : this.state.live ? this.video : <img src={CinemaOffAir} style={{ 'border-radius': '5px' }} width="100%"/>}
       </div>
     );
   }
