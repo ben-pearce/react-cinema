@@ -26,6 +26,7 @@ class Screen extends React.Component {
       autoplay: true,
       controls: true,
       fluid: true,
+      liveui: true,
       sources: [{
         src: getStreamMediaURL(),
         type: 'application/x-mpegURL'
