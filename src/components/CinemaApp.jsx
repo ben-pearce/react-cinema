@@ -50,6 +50,7 @@ class Cinema extends React.Component {
           <Row>
             <Col sm={9}>
               <Screen ref={this.screen} schedule={this.schedule} />
+              <Stand screen={this.screen} />
               <Schedule ref={this.schedule} screen={this.screen} />
             </Col>
             <Col className="pb-2">
