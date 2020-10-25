@@ -10,7 +10,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 
 import Screen from './Screen.jsx';
-import Schedule from './schedule/Schedule.jsx';
+import Stand from './Stand.jsx';
+import Schedule from './Schedule/Schedule.jsx';
 
 import CinemaConfig from '../../cinema.config.js';
 
