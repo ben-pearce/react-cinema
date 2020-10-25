@@ -37,7 +37,7 @@ class Cinema extends React.Component {
     return (
       <>
         <Navbar bg="dark" variant="dark" sticky="top">
-          <Container fluid={true} style={{ 'max-width': '1920px' }} className={'pl-2 pr-2'}>
+          <Container fluid={true} style={{ maxWidth: '1920px' }} className={'pl-2 pr-2'}>
             <Navbar.Brand>
               🍿 {CinemaConfig.cinema_name}
             </Navbar.Brand>
@@ -46,7 +46,7 @@ class Cinema extends React.Component {
             </Nav>
           </Container>
         </Navbar>
-        <Container fluid={true} style={{ 'max-width': '1920px' }} className={'pt-3'}>
+        <Container fluid={true} style={{ maxWidth: '1920px' }} className={'pt-3'}>
           <Row>
             <Col sm={9}>
               <Screen ref={this.screen} schedule={this.schedule} />
