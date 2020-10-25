@@ -35,7 +35,6 @@ class Stand extends React.Component {
   }
 
   render() {
-    console.log(this.props.screen);
     return (
       <>
         <Container fluid={true} className={'pt-2 pr-0 pl-0'}>
