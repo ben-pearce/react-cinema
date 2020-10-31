@@ -21,12 +21,15 @@ class Schedule extends React.Component {
   }
 
   getScheduledMovies() {
-    const currTimestamp = Math.floor((new Date()).getTime() / 1000);
+    if(this.state.schedule !== null) {
+      const currTimestamp = Math.floor((new Date()).getTime() / 1000);
 
-    let schedule = this.state.schedule.slice(0);
-    schedule.sort((a, b) => a.showtime - b.showtime);
-    schedule = schedule.filter(item => item.showtime + ((item.runtime + 30) * 60) > currTimestamp);
-    return schedule;
+      let schedule = this.state.schedule.slice(0);
+      schedule.sort((a, b) => a.showtime - b.showtime);
+      schedule = schedule.filter(item => item.showtime + ((item.runtime + 30) * 60) > currTimestamp);
+      return schedule;
+    }
+    return [];
   }
 
   getNextMovie() {
@@ -48,11 +51,12 @@ class Schedule extends React.Component {
 
   render() {
     let scheduleComponent = null;
+    let schedule = this.getScheduledMovies();
     if(this.state.schedule === null) {
       scheduleComponent = <ScheduleContentLoader/>;
-    } else if(this.state.schedule.length === 0) {
+    } else if(schedule.length === 0) {
       scheduleComponent = <p className="text-center">There are no shows currently scheduled.</p>;
-    } else if (this.state.schedule.length >= 1) {
+    } else if (schedule.length >= 1) {
       const currTimestamp = Math.floor((new Date()).getTime() / 1000);
 
       let schedule = this.getScheduledMovies();
