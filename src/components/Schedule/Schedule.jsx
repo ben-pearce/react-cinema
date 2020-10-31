@@ -42,7 +42,10 @@ class Schedule extends React.Component {
       if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
         let schedule = JSON.parse(xhr.responseText);
         this.setState({ schedule: schedule });
-        this.props.screen.current.setState({ title: this.getNextMovie().name });
+
+        if(this.getScheduledMovies().length >= 1) {
+          this.props.screen.current.setState({ title: this.getNextMovie().name });
+        }
       }
     };
     xhr.open('GET', `${CinemaConfig.shedule_path}?t=${Date.now()}`, true);
