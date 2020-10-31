@@ -64,7 +64,7 @@ class Schedule extends React.Component {
 
       let schedule = this.getScheduledMovies();
       const movieHasStarted = currTimestamp > schedule[0].showtime;
-      const secondsToUpdate = Math.abs(schedule[0].showtime - currTimestamp) + (movieHasStarted ? schedule[0].runtime * 60 : 0);
+      const secondsToUpdate = Math.abs(schedule[0].showtime - currTimestamp) + (movieHasStarted ? (schedule[0].runtime + 30) * 60 : 0);
       const updateIn = (secondsToUpdate + 5) * 1000;
       setTimeout(this.load.bind(this), updateIn);
       scheduleComponent = (
