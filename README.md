@@ -1,1 +1,1 @@
-solero-cinema
+react-cinema
